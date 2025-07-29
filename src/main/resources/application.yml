@@ -1,0 +1,19 @@
+server:
+  port: 8082
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/facturas_read_db
+
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: read-model-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+kafka:
+  topic:
+    facturas-creadas: facturas.creadas
